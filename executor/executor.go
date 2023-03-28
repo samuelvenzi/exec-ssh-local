@@ -4,5 +4,5 @@ package executor
 // implement.
 type Executor interface {
 	// Execute runs the given command on the machine.
-	Execute(command string) (string, error)
+	Execute(command string, host, user string, key []byte) (string, error)
 }

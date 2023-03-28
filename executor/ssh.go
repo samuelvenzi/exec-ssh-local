@@ -4,24 +4,16 @@ import "fmt"
 
 // SSHExecutor is an implementation of the Executor interface that runs
 // commands on a remote machine via SSH.
-type SSHExecutor struct {
-	host string
-	user string
-	key  []byte
-}
+type SSHExecutor struct{}
 
 // NewSSHExecutor creates a new SSHExecutor.
-func NewSSHExecutor(host, user string, key []byte) *SSHExecutor {
-	return &SSHExecutor{
-		host: host,
-		user: user,
-		key:  key,
-	}
+func NewSSHExecutor() *SSHExecutor {
+	return &SSHExecutor{}
 }
 
 // Execute runs the given command on the remote machine via SSH.
-func (e *SSHExecutor) Execute(command string) (string, error) {
-	fmt.Printf("Simulating executing command on remote machine via SSH: %s@%s\n", e.user, e.host)
+func (e *SSHExecutor) Execute(command, host, user string, key []byte) (string, error) {
+	fmt.Printf("Simulating executing command on remote machine via SSH: %s@%s\n", user, host)
 	// TODO: Implement code that will execute via SSH
 	return "", nil
 }

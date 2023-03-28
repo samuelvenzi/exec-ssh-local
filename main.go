@@ -13,7 +13,7 @@ func main() {
 		goexec = executor.NewLocalExecutor()
 	} else {
 		// Instantiate SSH executor
-		goexec = executor.NewSSHExecutor("host", "ubuntu", []byte("key"))
+		goexec = executor.NewSSHExecutor()
 	}
-	_, _ = goexec.Execute("command")
+	_, _ = goexec.Execute("command", "host", "ubuntu", []byte("key"))
 }

@@ -12,8 +12,8 @@ func NewLocalExecutor() *LocalExecutor {
 }
 
 // Execute runs the given command on the local machine.
-func (e *LocalExecutor) Execute(command string) (string, error) {
-	fmt.Printf("Simulating executing command on local machine\n")
+func (e *LocalExecutor) Execute(command, host, user string, key []byte) (string, error) {
+	fmt.Printf("Simulating executing command on local machine, ignoring host info\n")
 	// TODO: Implement code that will execute locally
 	return "", nil
 }
